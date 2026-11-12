@@ -392,7 +392,17 @@
         }
 
         @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
+            @page {
+                margin: 12mm;
+            }
+
             .navbar-ic,
+            .navbar-toggler,
             .footer-ic,
             .no-print,
             .flash-exito {
@@ -401,6 +411,10 @@
 
             body {
                 background: #fff;
+            }
+
+            a {
+                text-decoration: none !important;
             }
 
             .card-ic:hover,
@@ -415,6 +429,13 @@
             .card-kpi {
                 box-shadow: none;
                 border: 1px solid #e2e8f0;
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+            .chart-informe {
+                break-inside: avoid;
+                page-break-inside: avoid;
             }
         }
     </style>
